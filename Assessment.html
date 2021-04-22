@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Guess What??</title>
+    <script>
+        function startGame() {
+            var secretWord = document.getElementById("secretWord");
+            var answer = document.getElementById("secretWord").value;
+            if (secretWord.value == "") {
+                document.getElementById("clue").innerHTML = "Please Type a Valid word!!!"
+            } else {
+                document.getElementById("clue").innerHTML = "The word is " + answer.length + " characters long!!"
+                document.getElementById("secretWord").disabled = true;
+            }
+        }
+        function playGame() {
+            document.getElementById("gameStatus").innerHTML = "";
+            var answer = document.getElementById("secretWord").value;
+            var chance = document.getElementById("guess").value;
+            if (answer.length == chance.length) {
+                var cow = 0, bull = 0;
+                for (i = 0; i < answer.length; i++) {
+                    if (answer[i] == chance[i]) {
+                        cow += 1;
+                    }
+                    else {
+                        for (j = 0; j < answer.length; j++) {
+                            let index = answer.indexOf(chance[i]);
+                            if (chance[index] != answer[index]) {
+                                bull += 1;
+                            }
+                        }
+                    }
+                }
+                document.getElementById("result").innerHTML = cow + " Cow " + bull + " Bull ";
+                if (cow == answer.length) {
+                    document.getElementById("gameStatus").innerHTML = "YOU WIN";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "The word must be of" + answer.length + "characters";
+                document.getElementById("gameStatus").innerHTML = "";
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Guess What??</h1>
+    </header>
+    <main>
+        <h5>Enter Word:</h5>
+            <div>
+                <input type="password" id="secretWord" >
+                <button type="submit"  onclick="startGame()">Start Game</button>
+            </div>
+            <div>
+                <span id="clue"></span>
+            </div>
+        
+        <br />
+        <h5>Find Word:</h5>
+            <div>
+                <input type="text"  id="guess">
+                <button type="submit" onclick="playGame()">Play Game</button>
+            </div>
+            <span id="result"></span>
+            <br />
+       
+    </main>
+    <br />
+    <div id="result">
+       <b> <span id="gameStatus"></span> </b>
+    </div>
+</body>
+</html>
