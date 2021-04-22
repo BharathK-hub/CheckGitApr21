@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="C:\Users\Admin\OneDrive\Desktop\Softura\Day5\bootstrap-5.0.0-beta3-dist\css\bootstrap.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        var users = [
+
+        ]
+        function addInitialRecords() {
+            var myTable = document.getElementById("tblUsers");
+            for (var i = 0; i < users.length; i++) {
+                var row = myTable.insertRow(i + 1);//0th row is heading row so i+1th row like a tr
+                var cellUN = row.insertCell(0);//add 1st column like td
+                var cellPass = row.insertCell(1);//add 1st column like td
+                var cellDB = row.insertCell(2);
+                var cellCT = row.insertCell(3);
+                cellUN.innerHTML = users[i].username;
+                cellPass.innerHTML = users[i].password;
+                cellDB.innerHTML = users[i].dob;
+                cellCT.innerHTML = users[i].contact
+            }
+        }
+
+        function registerUser() {
+            var username = document.getElementById("txtUsername").value
+            var password = document.getElementById("txtPassword").value
+            var dob = document.getElementById("txtDob").value
+            var contact = document.getElementById("txtContact").value
+            var myUser = {
+                username: username,
+                password: password,
+                dob: dob,
+                contact: contact
+            }
+            users.push(myUser);
+            //console.log("-----------------------------------------")
+            //console.log(users)
+            var count = users.length;
+            var myTable = document.getElementById("tblUsers");
+            var row = myTable.insertRow(count);
+            var cellUN = row.insertCell(0);
+            var cellPass = row.insertCell(1);
+            var cellDB = row.insertCell(2);
+            var cellCT = row.insertCell(3);
+            cellUN.innerHTML = users[count - 1].username;
+            cellPass.innerHTML = users[count - 1].password;
+            cellDB.innerHTML = users[count - 1].dob;
+            cellCT.innerHTML = users[count - 1].contact
+        }
+    </script>
+    <style>
+        .form-control {
+            width: 500px;
+            border: 2px solid;
+        }
+
+        .tab1 {
+            border: double 2px black;
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table id="tblUsers" class="tab1" border="1">
+            <tr>
+                <th>ID</th>
+
+                <th>NAME</th>
+
+                <th>DOB</th>
+
+                <th>PHONE</th>
+            </tr>
+        </table>
+        <br />
+        <!--<button class="btn btn-success" onclick="addInitialRecords()">Check Records</button>-->
+    </div>
+    <br />
+    <br />
+    <div>
+        <label for="txtUsername"><b>ID</b></label>
+        <br />
+        <input type="text" class="form-control" id="txtUsername" />
+        <br />
+        <label for="txtPassword"><b>NAME</b></label>
+        <br />
+        <input type="text" class="form-control" id="txtPassword" />
+        <br />
+        <label for="txtDob"><b>DOB</b></label>
+        <br />
+        <input type="date" class="form-control" id="txtDob" />
+        <br />
+        <label for="txtContact"><b>CONTACT</b></label>
+        <br />
+        <input type="number" class="form-control" id="txtContact" />
+        <br />
+        <button class="btn btn-danger" onclick="registerUser()">ADD TO TABLE</button>
+
+    </div>
+
+
+</body>
+</html>

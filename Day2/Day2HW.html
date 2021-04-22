@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            background-color: #00B7F9;
+        }
+        img {
+            height: 200px;
+            width: 350px;
+        }
+
+        input {
+            
+            width: 1200px;
+            height: 50px;
+            margin-top: 10px;
+            float: inline-end;
+            background: #f1f1f1;
+        }
+       
+        nav {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #f1f1f1;
+            border: 3px solid #0a078b;
+            margin: 15px 0px 10px 0px;
+            height: 30px;
+            padding: 7px;
+        }
+        a{
+            text-decoration:none;
+            color:black;
+        }
+          
+        form{
+            display:flex;
+        }
+            form button {
+                height: 50px;
+                margin-top: 10px
+            }
+        #div1 img{
+            position: relative;
+            left: 0px;
+            top: 0px;
+            border-radius: 0px;
+            text-align:left;
+            height:200px;
+            width:330px;
+            animation-name:divAnimate;
+            animation-duration:5s;
+            animation-iteration-count:infinite;
+        }
+        @keyframes divAnimate {
+           from {
+                left: 1250px;
+            }
+
+            to {
+                left:0px;
+            }
+        }
+        main{
+            display:flex;
+            flex-wrap:wrap;
+        }
+        .card {
+            margin: 10px;
+            text-align: center;
+            border: 5px solid #0a0779;
+        }
+        .container{
+            padding:10px;
+        }
+        .container img:hover {
+            transform: scale(1.05);
+        }
+        img{
+            max-width:100%;
+            max-height:100%;
+        }
+        h3{
+            
+            margin:4px;
+        }
+     </style>
+</head>
+<body>
+    <header>
+        <div id="div1">
+            <img src="6.jfif" />
+        </div>
+        <form>
+            <b><input id="search" type="search" placeholder="Movies,Comedy shows,Series..etc" /></b>
+            <button type="submit">Search</button>
+        </form>
+
+    </header>
+    <nav>
+        <a href="/html/">MOVIES</a>
+        <a href="/css/">COMEDY</a>
+        <a href="/js/">SERIES</a>
+        <a href="/python/">THRILLER</a>
+        <a href="/python/">HORROR</a>
+    </nav>
+    <main>
+        <div class="card">
+            <div class="container">
+                <img src=" 7.jfif" />
+                <h3>INSIDE EDGE</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <img src=" 8.jfif" />
+                <h3>SOORARAI POTTRU</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <img src=" 9.jfif" />
+                <h3>V</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <img src=" 10.jfif" />
+                <h3>MASTER</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <img src=" 11.jfif" />
+                <h3>TENET</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <img src="12.jfif" />
+                <h3>KNIVES OUT</h3>
+            </div>
+        </div>
+
+    </main>
+    
+    
+</body>
+</html>

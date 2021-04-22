@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="C:\Users\Admin\OneDrive\Desktop\Softura\Day 1\bootstrap-5.0.0-beta3-dist\css\bootstrap.css" rel="stylesheet" />
+    <script>
+        function myFirstFunction() {
+            var txtName = document.getElementById("txtName");
+            txtName.classList.add("border")
+            if (txtName.value == "")
+            {
+                txtName.classList.add("border-danger")
+                document.getElementById("errName").innerHTML = "Name cannot be empty"
+            }
+            else
+            {
+                txtName.classList.add("border-success")
+                txtName.classList.remove("border-danger")
+                document.getElementById("errName").innerHTML = ""
+            }
+            var txtNo = document.getElementById("txtNo");
+            txtNo.classList.add("border")
+            console.log(txtNumber);
+            if (txtNo.length == 10)
+            {
+                txtNo.classList.add("border-danger")
+                document.getElementById("errNo").innerHTML = "Phone no invalid"
+            }
+            else
+            {
+                txtNo.classList.add("border-success")
+                txtNo.classList.remove("border-danger")
+                document.getElementById("errNo").innerHTML = ""
+            }
+
+        }
+
+    </script>
+    <style>
+        .form-control{
+            width:500px;
+        }
+    </style>
+</head>
+<body>
+    <font color="Black" face="Monda" size="6">
+        <h1><center>FORD CARS</center></h1>
+        <img src="2.jfif" height="300" width="300" />
+    </font>
+    <br />
+    <address align="left">
+        <h1>
+            Address
+        </h1>
+        Akshya Nagar 1st Block 1st Cross,
+        <br />
+        Rammurthy nagar,
+        <br />
+        Chennai-600099
+        <br />
+    </address>
+    <hr />
+    <h1>Location</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62171.03741874752!2d80.11358621967851!3d13.118824684290251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263ba9a487b3f%3A0x1e923f00f5206296!2sAmbattur%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1618502657999!5m2!1sen!2sin" width="200" height="200" align="middle">
+    </iframe>
+    <hr />
+    <h1>ENTER YOUR DETAILS</h1>
+
+    <p><b>NAME:</b></p>
+    <input type="text" class="form-control" id="txtName" placeholder="Enter user name" />
+    <span id="errName">
+
+    </span>
+    <br />
+    <br />
+    <p><b>CONTACT NO:</b></p>
+    <input type="text" class="form-control" id="txtNo" placeholder="Enter your contact no" />
+    <span id="errNo">
+
+    </span>
+    <br />
+    <br />
+    <button class="btn btn-success" onclick="myFirstFunction()">Submit</button>
+
+</body>
+</html>

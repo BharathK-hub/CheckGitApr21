@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="C:\Users\Admin\OneDrive\Desktop\Softura\Day4\bootstrap-5.0.0-beta3-dist\css\bootstrap.css" rel="stylesheet" />
+    <script>
+        function myFirstFunction(){
+            //alert('You clicked this');
+            var txtName = document.getElementById("txtName");
+            txtName.classList.add("border")
+            if (txtName.value == "")
+            {
+                /*alert('Field cannot be empty');
+                 txtName.style.borderColor = "Red"*/
+                txtName.classList.add("border-danger")
+                document.getElementById("errName").innerHTML="Name cannot be empty"
+            }
+            else {
+                txtName.classList.add("border-success")
+                txtName.classList.remove("border-danger")
+                document.getElementById("errName").innerHTML = ""
+            }
+            var txtAge = document.getElementById("txtAge");
+            txtAge.classList.add("border")
+            /*alert(number(txtage.value) + 10);*/
+            if (txtAge.value < 18 || txtAge.value >50)
+            {
+                txtAge.classList.add("border-danger")
+                document.getElementById("errAge").innerHTML = "Invalid"
+            }
+            else {
+                txtAge.classList.add("border-success")
+                txtAge.classList.remove("border-danger")
+                document.getElementById("errAge").innerHTML = ""
+            }
+            
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <input type="text" class="form-control" id="txtName" />
+    <span id="errName">
+       
+    </span>
+    <input type="number" class="form-control" id="txtAge" />
+    <span id="errAge">
+       
+    </span>
+    <button class="btn btn-success" onclick="myFirstFunction()">Click to see</button>
+
+</body>
+</html>
