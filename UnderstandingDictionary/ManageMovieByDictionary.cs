@@ -235,6 +235,7 @@ namespace CollectionsProject
         static void Main(string[] s)
         {
             new ManageMovieByDictionary().PrintMenu();
+            Console.ReadKey();
         }
     }
 }
