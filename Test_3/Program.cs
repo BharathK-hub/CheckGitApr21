@@ -117,6 +117,7 @@ namespace Assessment
         }
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             console.writeline("--------divisible by 7--------\n");
             divisiblebyseven();
             console.writeline("--------prime numbers--------\n");
@@ -127,6 +128,18 @@ namespace Assessment
             ascendingorder();
             console.writeline("--------checking the user credentials--------\n");
             usercredentials();
+=======
+            Console.WriteLine("--------DIVISIBLE BY 7--------\n");
+            DivisibleBySeven();
+            Console.WriteLine("--------PRIME NUMBERS--------\n");
+            PrimeNumbers();
+            Console.WriteLine("--------REPEATING NUMBERS--------\n");
+            RepeatingNumbers();
+            Console.WriteLine("--------PRINTING THE NUMBERS IN ASCENDING--------\n");
+            AscendingOrder();
+            Console.WriteLine("--------CHECKING THE USER CREDENTIALS--------\n");
+            UserCredentials();
+>>>>>>> 60390a0119f9bd2a7af2bfb8b5eccbab53216154
         }
     }
 }
